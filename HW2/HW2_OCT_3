@@ -1,0 +1,95 @@
+                   Due: Oct 6, 2017 at 11:59pm
+
+CS 480
+Fall 2017
+Dr. Duric
+
+
+                          Homework #2 (25p)
+
+Your first assignment will be to write a Lisp program for solving of
+n-Queens/tokens problem. The objective is to place n queens/tokens on a nxn
+board: no two queens/tokens are allowed to be in the same row, column, or a
+diagonal.
+
+You can represent a board configuration with a simple n element list
+(c1 c2 c3 c4 ... cn), ci corresponds to the column position of i-th
+queen in the i-th row. For example, (1 3 2 4) would correspond to the
+4 queens in positions (1,1) (row 1, column 1), (2,3) (row 2, column
+3), (3,2) (row 3, column 2), and (4,4) (row 4, column 4). Note that in
+our representation we do not use double indexes: the i-th queen is
+placed in the i-th row and its column index is ci. Note: If you want
+to write a faster program you can use a vector (or array) to represent
+your board position. You should worry about faster implementation only
+after you are absolutely sure that you can solve the problem using a
+(easier to write and debug) list implementation.
+
+Your homework will have three parts. In the first part you will write
+A function for checking whether an arbitrary permutation of n numbers 
+solves n-queens problem. In the second part you will write a program to
+generate all solutions of n-queens for (n=4,5, â€¦,10). You should only 
+display solution for n<6 and report how many solutions there are for n>=6.
+In the third part you will write a more efficient implementation that will 
+search for a single placement of n-queens on the board. A detailed 
+description of the problem follows.
+
+Part 1. (5p) 
+You can write a function that checks if a board is
+legal. A legal board configuration cannot have two queens in
+the same column or diagonal. Two queens ci and cj (in rows i and j)
+share a column if ci=cj; they share a diagonal if |ci-cj|=|i-j|,
+where i,j=1,2,3,4 and |x| is the absolute value of x. Note that if you use
+permutations as potential board configurations then you only need to check
+if queens share a diagonal.
+
+Part 2: (10p) 
+Generate configurations that correspond to permutations of 1..n. 
+For example, (1,2,3,4) would have 24 permutations, 1..5 would have 120, 
+1..n would have n! (=1*2*3*...*n). You can generate all permutations of 
+numbers 1..2 by starting from ((1)) and inserting 2 in all possible 
+positions to obtain ((2 1) (1 2)). Similarly, you obtain all permutations 
+of 1..3 by starting from ((2 1) (1 2)) and inserting 3 in all possible 
+positions in each of the length-two lists to obtain ((3 2 1) (2 3 1) 
+(2 1 3) (3 1 2) (1 3 2) (1 2 3)). Similarly, given all permutations of 
+1..n-1 you can create all permutations of 1..n. Hint: Use 'subseq' lisp 
+function. Can you solve n-queens for n=4 . . .,10? How about n>10? How many 
+solutions to n-queens are there for n>=4? 
+
+Part 3: (10p) In this part you will generate random permutations of n queens and
+check if they correspond to legal boards. You can stop as soon as you find a legal
+position. You will start by writing a function 'shuffle' that takes a list 
+(1 2 3 ... n) and returns a list with the same elements in a random order (5p for 
+this part). To generate a random shuffle you pick one number from (1â€¦n) at random and 
+move it to a new list, then you pick another number randomly from the shortened list and
+add it to the new list. Continue until you have moved all numbers from the old 
+list to the new one. You will then run this list for increasing values of n to obtain solutions 
+of the n-queens problem. How many times do you need to shuffle to obtain solutions for
+n=4,...,10? Do you get the same answer for different runs? 
+Can your program handle n=11,12,13,14,15,...?  How large n can your program handle?
+
+Hints: See the slide show attached with the homework if you wish to learn more about permutations
+and/or want to make an efficient implementation of the permutation generation method.
+
+Instructions for submission:
+----------------------------
+
+(1) Using script or dribble, you are to capture the output of a Lisp session
+    in which you successfully load and execute your code, showing sufficient
+    testing of your function(s). of execution of each of your functions. You 
+    will attach these results in your email (see next step) as â€œoutput.txtâ€
+
+(2) Send a SINGLE email to ple13@gmu.edu formatted in the following way:
+ 
+       - the subject field of the email should read: CS480:HW2
+ 
+       - Please attach your lisp file in the email. The file should be called â€œyourNetIDHW2.lispâ€ where your netID is the first part of your GMU email (mine would be â€œzduricHW2.lispâ€.  The body should include:
+ 
+         Your GMU net id
+   Your name
+         Homework #2 
+     As a safety precaution, always CC yourself when you submit homework
+     this way and keep it around until it has been graded and
+         returned.
+
+     FINAL NOTE: we will test all code using MOSS. 
+ 

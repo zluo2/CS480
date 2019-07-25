@@ -1,0 +1,101 @@
+Script started on Sat Nov 25 23:17:36 2017
+[?1034hbash-3.2$ sbcl
+This is SBCL 1.2.11, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (load "zluo2HW3.lisp")
+
+T
+* (SolveTSP *map1*)
+
+"random permutaion: (A B D C E A)" 
+"Cost: 675" 
+"Local Best Solution: (A C B D E A)" 
+"Cost: 375"
+*  (SolveTSP *map1*)
+
+"random permutaion: (A C B D E A)" 
+"Cost: 375" 
+"Local Best Solution: (A C B D E A)" 
+"Cost: 375"
+*(SolveTSP *map1*)
+
+"random permutaion: (D A B E C D)" 
+"Cost: 725" 
+"Local Best Solution: (D A E B C D)" 
+"Cost: 425"
+*(SolveTSP *map1*)
+
+"random permutaion: (B D A E C B)" 
+"Cost: 450" 
+"Local Best Solution: (B E A D C B)" 
+"Cost: 425"
+*(SolveTSP *map1*)
+
+"random permutaion: (A C D B E A)" 
+"Cost: 475" 
+"Local Best Solution: (A D C B E A)" 
+"Cost: 425"
+*(SolveTSP *map1*)
+
+"random permutaion: (C A D E B C)" 
+"Cost: 425" 
+"Local Best Solution: (C A E D B C)" 
+"Cost: 375"
+*(SolveTSP *map2*)
+
+"random permutaion: (M S E B C A M)" 
+"Cost: 62" 
+"Local Best Solution: (M E S C B A M)" 
+"Cost: 54"
+*(SolveTSP *map2*)
+
+"random permutaion: (A S C M E B A)" 
+"Cost: 68" 
+"Local Best Solution: (A M E S C B A)" 
+"Cost: 54"
+*(SolveTSP *map2*)
+
+"random permutaion: (C M S B A E C)" 
+"Cost: 69" 
+"Local Best Solution: (C B A M S E C)" 
+"Cost: 55"
+*(SolveTSP *map2*)
+
+"random permutaion: (B E M C S A B)" 
+"Cost: 68" 
+"Local Best Solution: (B C S E M A B)" 
+"Cost: 54"
+*(SolveTSP *map2*)
+
+"random permutaion: (B A M E S C B)" 
+"Cost: 54" 
+"Local Best Solution: (B A M E S C B)" 
+"Cost: 54"
+*(SolveTSP *map2*)
+
+"random permutaion: (A B S C E M A)" 
+"Cost: 60" 
+"Local Best Solution: (A S B C E M A)" 
+"Cost: 58"
+*(SolveTSP *map2*)
+
+"random permutaion: (S M C A E B S)" 
+"Cost: 76" 
+"Local Best Solution: (S A M E C B S)" 
+"Cost: 58"
+*(SolveTSP *map2*)
+
+"random permutaion: (A E C B S M A)" 
+"Cost: 62" 
+"Local Best Solution: (A B C S E M A)" 
+"Cost: 54"
+* (quit)
+bash-3.2$ exit
+exit
+
+Script done on Sat Nov 25 23:18:37 2017

@@ -1,0 +1,115 @@
+Script started on Thu Oct  5 13:51:07 2017
+[?1034hbash-3.2$ sbcl
+This is SBCL 1.2.11, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* (load "zluo2HW2.lisp")
+
+T
+* (check-list '(1 1))
+
+0
+* (check-list '(1 2 3 4))
+
+3
+* (check-list '(5 3 1 4 2))
+
+0
+* (check-list '(2 4 1 3))
+
+0
+* (permutation '(1 2 3 4))
+
+((1 2 3 4) (1 2 4 3) (1 3 2 4) (1 3 4 2) (1 4 2 3) (1 4 3 2) (2 1 3 4)
+ (2 1 4 3) (2 3 1 4) (2 3 4 1) (2 4 1 3) (2 4 3 1) (3 1 2 4) (3 1 4 2)
+ (3 2 1 4) (3 2 4 1) (3 4 1 2) (3 4 2 1) (4 1 2 3) (4 1 3 2) (4 2 1 3)
+ (4 2 3 1) (4 3 1 2) (4 3 2 1))
+* (permutation '(1 2 3 4 5))
+
+((1 2 3 4 5) (1 2 3 5 4) (1 2 4 3 5) (1 2 4 5 3) (1 2 5 3 4) (1 2 5 4 3)
+ (1 3 2 4 5) (1 3 2 5 4) (1 3 4 2 5) (1 3 4 5 2) (1 3 5 2 4) (1 3 5 4 2)
+ (1 4 2 3 5) (1 4 2 5 3) (1 4 3 2 5) (1 4 3 5 2) (1 4 5 2 3) (1 4 5 3 2)
+ (1 5 2 3 4) (1 5 2 4 3) (1 5 3 2 4) (1 5 3 4 2) (1 5 4 2 3) (1 5 4 3 2)
+ (2 1 3 4 5) (2 1 3 5 4) (2 1 4 3 5) (2 1 4 5 3) (2 1 5 3 4) (2 1 5 4 3)
+ (2 3 1 4 5) (2 3 1 5 4) (2 3 4 1 5) (2 3 4 5 1) (2 3 5 1 4) (2 3 5 4 1)
+ (2 4 1 3 5) (2 4 1 5 3) (2 4 3 1 5) (2 4 3 5 1) (2 4 5 1 3) (2 4 5 3 1)
+ (2 5 1 3 4) (2 5 1 4 3) (2 5 3 1 4) (2 5 3 4 1) (2 5 4 1 3) (2 5 4 3 1)
+ (3 1 2 4 5) (3 1 2 5 4) (3 1 4 2 5) (3 1 4 5 2) (3 1 5 2 4) (3 1 5 4 2)
+ (3 2 1 4 5) (3 2 1 5 4) (3 2 4 1 5) (3 2 4 5 1) (3 2 5 1 4) (3 2 5 4 1)
+ (3 4 1 2 5) (3 4 1 5 2) (3 4 2 1 5) (3 4 2 5 1) (3 4 5 1 2) (3 4 5 2 1)
+ (3 5 1 2 4) (3 5 1 4 2) (3 5 2 1 4) (3 5 2 4 1) (3 5 4 1 2) (3 5 4 2 1)
+ (4 1 2 3 5) (4 1 2 5 3) (4 1 3 2 5) (4 1 3 5 2) (4 1 5 2 3) (4 1 5 3 2)
+ (4 2 1 3 5) (4 2 1 5 3) (4 2 3 1 5) (4 2 3 5 1) (4 2 5 1 3) (4 2 5 3 1)
+ (4 3 1 2 5) (4 3 1 5 2) (4 3 2 1 5) (4 3 2 5 1) (4 3 5 1 2) (4 3 5 2 1)
+ (4 5 1 2 3) (4 5 1 3 2) (4 5 2 1 3) (4 5 2 3 1) (4 5 3 1 2) (4 5 3 2 1)
+ (5 1 2 3 4) (5 1 2 4 3) (5 1 3 2 4) (5 1 3 4 2) (5 1 4 2 3) (5 1 4 3 2)
+ (5 2 1 3 4) (5 2 1 4 3) (5 2 3 1 4) (5 2 3 4 1) (5 2 4 1 3) (5 2 4 3 1)
+ (5 3 1 2 4) (5 3 1 4 2) (5 3 2 1 4) (5 3 2 4 1) (5 3 4 1 2) (5 3 4 2 1)
+ (5 4 1 2 3) (5 4 1 3 2) (5 4 2 1 3) (5 4 2 3 1) (5 4 3 1 2) (5 4 3 2 1))
+* (generate-allsolution 2)
+
+NIL
+* (generate-allsolution 4)
+
+((3 1 4 2) (2 4 1 3))
+* (generate-allsolution 5)
+
+((5 3 1 4 2) (5 2 4 1 3) (4 2 5 3 1) (4 1 3 5 2) (3 5 2 4 1) (3 1 4 2 5)
+ (2 5 3 1 4) (2 4 1 3 5) (1 4 2 5 3) (1 3 5 2 4))
+* (generate-allsolution 6)
+
+4
+* (generate-allsolution 7)
+
+40
+* (list-shuffle '(1 2 3 4))
+
+(4 2 3 1)
+* (list-shuffle '(1 2 3 4))
+
+(1 4 2 3)
+* (list-shuffe'(1 2 3 4))
+
+(4 3 2 1)
+* (list-shuffle '(1 2 3 4 5))
+
+(1 4 5 3 2)
+* (get-solution 4)
+
+16
+* (get-solution 4)
+
+31
+* (get-solution 4)
+
+5
+* (get-solution 5)
+
+22
+* (get-solution 5)
+
+8
+* (get-solution 11)
+
+17722
+* (get-solution 12)
+
+6571
+* (get-solution 13)
+
+17471
+* (get-solution 14)
+
+31233
+* (get-solution 15)
+
+2121529
+* (quit)
+bash-3.2$ exit
+exit
+
+Script done on Thu Oct  5 13:55:41 2017

@@ -1,0 +1,20 @@
+(defun conv16(HEX)
+  (let ((revHex nil) (table nil))
+    (setf table (make-hash-table :test #'equalp))
+    (setf (gethash 'a table) 10)
+    (setf (gethash 'b table) 11)
+    (setf (gethash 'c table) 12)
+    (setf (gethash 'd table) 13)
+    (setf (gethash 'e table) 14)
+    (setf (gethash 'f table) 15)
+
+    (let  ((sum 0) (multiplier 1))
+
+      (setf revHEX (reverse HEX))
+
+      (dolist (x revHEX) 
+	(if (numberp x) (progn (setf sum (+ sum (* x multiplier)))
+			       (setf multiplier (* multiplier 16)))
+		      	(progn (setf sum (+  sum (* (gethash x table) multiplier)))
+			(setf multiplier (* multiplier 16)))))
+      sum)))
