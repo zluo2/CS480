@@ -1,2 +1,2 @@
 # CS480
-GMU-CS480-Artificial Intelligence
+CS480-Artificial Intelligence
